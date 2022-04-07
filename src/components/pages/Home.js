@@ -82,23 +82,23 @@ class Home extends React.Component {
       <>
         <Container>
         <br />
-          <Button color="success" onClick={()=>this.mostrarModalInsertar()}>Agregar Comentario</Button>
+          <Button color="danger" onClick={()=>this.mostrarModalInsertar()}>Agregar Comentario</Button>
           <br />
           <br />
           <label>Buscar</label>
-       <input class="typeahead form-control" type="text" placeholder="Buscar"></input>
+       <input className="typeahead form-control" type="text" placeholder="Buscar"></input>
          <br />
           <Table>
-            <thead>
+            <thead className="thead-dark">
               <tr>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Website</th>
-                <th>Acción</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Email</th>
+                <th scope="col">Website</th>
+                <th scope="col">Acción</th>
               </tr>
             </thead>
 
-            <tbody>
+            <tbody className="table-active">
               {this.state.data.map((dato) => (
                 <tr key={dato.nombre}>
                   <td>{dato.nombre}</td>
@@ -106,7 +106,7 @@ class Home extends React.Component {
                   <td>{dato.website}</td>
                   <td>
                     <Button
-                      color="primary"
+                      color="info"
                       onClick={() => this.mostrarModalActualizar(dato)}
                     >
                       Editar
